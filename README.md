@@ -9,4 +9,4 @@ Simply download the installer.sh file, giive it execute permitions (in a termina
 Open a bash terminal and type `klsh`
 
 # Commands
-Comming soon: https://Github.com/codingbunnys/klsh/wiki
+Comming soon... Once its mostly done it will be available [here!](https://Github.com/codingbunnys/klsh/wiki) (the comunity can also contribute)
