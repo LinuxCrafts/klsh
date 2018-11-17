@@ -1,0 +1,5 @@
+#!/bin/bash
+# sleep 2
+# xdotool key ctrl+c
+# xdotool key L BackSpace
+# killall --younger-than 3s vlc

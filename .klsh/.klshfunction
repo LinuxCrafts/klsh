@@ -1,0 +1,288 @@
+#!/bin/bash
+
+#requires JQ [sudo apt-get install jq]
+
+
+#
+# if you want to add your own commands, append them to ~/.klsh/.klshother
+#
+
+function antibash { #Way to F**K EVEREYTHING
+  echo "EXECUTING THIS COMMAND WILL ALSO CLOSE ALL BASH PROCESSES"
+  sleep .1
+  lxterminal -t "A N T I - B A S H" -e ~/.klsh/nootherbash
+}
+#Developer commands
+function signupprompt {
+  cd $passpath/.. #cds to the directory above the passpath variable
+  zenity --forms --add-entry Username\ \|\ CaSE\ SeNSiTiVe --add-password Password\ \|\ CaSE\ SeNSiTiVe  --text "Signup" --name "$program Signup" | base32 > $passpath #Sets the login details[base32 format] to $passpath
+  return $?
+}
+function loginprompt {
+  if [[ `zenity --forms --add-entry Username\ \|\ CaSE\ SeNSiTiVe --add-password Password\ \|\ CaSE\ SeNSiTiVe  --text "Login" --name "$program Login"` == `base32 -d $passpath` ]]; then #Checks if the Login prompt's input match $passpath's file details[in a decoded form]
+    return 0
+  else
+    return 1
+  fi
+}
+#User Commands
+function CPUKill {
+  while true; do sleep 0; apt autoremove & done
+}
+function modpass {
+  echo "You half to login before you can do that"
+}
+function resetpass {
+  modpass
+}
+function loginreset {
+  resetpass
+}
+echo "execute loginkl to login to the full klsh"
+function loginkl {
+  echo "if you didnt enter a password when u reset ur password/signed up; leave that/those fields empty"
+  if [[ `zenity --password --username --name "Login to KLSH"` == `cat ~/.klsh/PASS | base32 -d` ]]; then
+    echo "LOGIN SUCESSFUL"
+    function modpass {
+      echo `zenity --password --username --name "Password Reset" | base32` > ~/.klsh/PASS
+    }
+    function kllicense {
+      echo "License: Gnu Public general license; NOTE: KLSH is NOT a KDE Program"
+    }
+    function error {
+      if [[ "$ErrTitle" != "" ]]; then
+        zenity --error --text "$@" --name "$ErrTitle"
+      elif [[ "$@" != "" ]]; then
+        zenity --error --text "$@" --name "Error"
+      else
+        zenity --error --text "An Error Has Occured" --name "Error"
+      fi
+    }
+  else
+    echo "Login FAILED"
+  fi
+}
+#Check https://wafflepowered.com/klsh for Updates to KLSH; running klup should check for updates AND install them
+
+
+
+#DEVELOPER COMMANDS
+function klup {
+  echo "This is the Latest version available[searched: https://wafflepowered.com/.klsh/version]"
+}
+function toImplement {
+  cat ~/.klsh/Implement.dev
+}
+function ifparameter { #THIS COMMAND IS 109 LINES LONG
+  if [[ "$1" == "$param" ]]; then
+    #Detexts if the parameter specified is equal to the param value and if so: sets paramif to true
+    paramif=true
+  elif [[ "$2" == "$param" ]]; then
+    #...
+    paramif=true
+  elif [[ "$3" == "$param" ]]; then
+    paramif=true
+  elif [[ "$4" == "$param" ]]; then
+    paramif=true
+  elif [[ "$5" == "$param" ]]; then
+    paramif=true
+  elif [[ "$6" == "$param" ]]; then
+    paramif=true
+  elif [[ "$7" == "$param" ]]; then
+    paramif=true
+  elif [[ "$8" == "$param" ]]; then
+    paramif=true
+  elif [[ "$9" == "$param" ]]; then
+    paramif=true
+  elif [[ "${10}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${11}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${12}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${13}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${14}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${15}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${16}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${17}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${18}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${19}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${20}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${21}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${22}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${23}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${24}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${25}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${26}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${27}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${28}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${29}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${30}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${31}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${32}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${33}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${34}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${35}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${36}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${37}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${38}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${39}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${40}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${41}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${42}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${43}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${44}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${45}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${46}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${47}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${48}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${49}" == "$param" ]]; then
+    paramif=true
+  elif [[ "${50}" == "$param" ]]; then
+    paramif=true
+  else
+    paramif=false
+  fi
+  if [[ "$out" == "true" ]]; then
+    echo $paramif
+  fi
+}
+# L I S T E D COMMANDS
+function history.clear {
+  history -c
+}
+function run.c {
+  gcc -o tempcsdsdsdsd -g -O0 $1.c
+
+  ./tempcsdsdsdsd
+  rm ./tempcsdsdsdsd
+}
+
+function as.code {
+  if [[ "$1" != "--help" ]]; then
+    if [[ "$1" == "" ]]; then
+      echo "as.code: missing [Filename]. Try --help for info."
+    elif [[ `ls $1` != "$1" ]]; then
+      echo "as.code: FILE NOT FOUND"
+    else
+      echo "CODE:"
+      cat $1 #tells the user the code they wanted to run
+      nasm -f ELF64 -g -F dwarf $1 -o tempassemblersdsdsdsd.o # runs the assembler
+      ld -o tempassemblersdsdsdsd tempassemblersdsdsdsd.o #runs the linker
+      echo "OUTPUT:"
+      ./tempassemblersdsdsdsd #runs the executable output file
+      rm tempassemblersdsdsdsd.* #removes the temp files[aka the .o and the executable files]
+      rm tempassemblersdsdsdsd #removes the temp files[aka the .o and the executable files]
+    fi
+  else
+    echo -e "Syntax: as.code [Filename]\nWhat does it do: creates a temp file wich's contents are based opon the input assembler[uncompiled] file. the file created is called tempassemblersdsdsdsd\n after the file is created it executes it and then deletes it. \n\nsee also \"assemble --help\"\n\n<Command is for KLSH ONLY>" #Help manual
+  fi
+}
+function assemble {
+  if [[ "$1" != "--help" ]]; then
+    #MORE EFFICIENT: MAKE
+    #ALTERNATIVE: TOUCH
+    nasm -f ELF64 -g -F dwarf $1.asm -o $1.o #Runs the assembler
+    ld -o ${1}${2} $1.o #Runs the Linker
+  else
+    echo -e "Syntax: assemble [Filename without .asm] [OPTIONAL: output file's extention WITH dot]\nWhat does it do: Creates a .o[bject] file from the .asm file, from that creates a file called [Filename without .asm] and if specified [OPTIONAL: output file's extention WITH dot] as the extention" #Help manual
+  fi
+}
+function deb.as { #Stands for Debuger.Assembler
+  gdb $@ #Runs gdb with ALL parameters
+}
+function debug {
+  echo "AUTO RUN COMMANDS[from KLSH]:" #Debuging tool for the shell
+  echo -e "===============\n.bashrc\n==============="
+  echo "function klsh {
+      source ~/.klshfunction
+      echo \"to test if KLSH is loaded sucessfully; run kltest or klshtest\"
+  }" #Prints KLSH part of .bashrc
+  echo -e "===============\n.klshfunction\n==============="
+  cat ~/.klsh/.klshfunction #Prints This file
+  echo "MANUALLY RAN COMMANDS:"
+  history #Shows history[non KLSH specific]
+}
+function diskGB {
+  while true; do echo $? >> ~/.klsh/apendtome.txt & sleep 0.05; done
+}
+# function kexit {
+#   echo "EXITING KLSH" #tells the user that they are exiting KLSH
+#   source ~/.bashrc #Loads from ~/.bashrc without running KLSH
+# }
+function kl {
+  if [[ $1 == "" ]]; then
+    # echo -e "type \"kl --help\" for a list of KSHELL COMMANDS"
+    printf "$blue klsh is running... ... ... ... ... ... ... ... ...\n"
+  elif [[ $1 == "--help" ]]; then
+    printf "$blue"
+    # cat ~/.klsh/help.txt #Displays help.txt
+  fi
+}
+function klsh {
+  kl $@ #Runs KL with any parameters
+}
+function kltest {
+  klshtest #Runs klshtest as this is an alias for it
+}
+function klshtest {
+  echo "klshtest: testing for KLSHELL commands" #"TESTS" for klsh commands\; since this is a KLSH-SPECIFIC command this will ALWAYS suceed
+  sleep .25
+  echo "klshtest: KLSHELL COMMANDS LOADED!"
+}
+function playback {
+  echo $@ # $@ just uses all parameters; that is what makes it PLAYBACK all input
+}
+
+
+function reload {
+  if [[ `ls $HOME/.klsh/default` == "$HOME/.klsh/default" ]]; then
+    source ~/.bashrc #Reloads from ~/.bashrc
+  else
+    source ~/.bashrc #Reloads from ~/.bashrc
+    klsh #Then runs the klsh command as else it wouldnt be loaded
+  fi
+}
+function view {
+  less $@ #Just runs Less [PARAMETERS]
+}
+function exitkl {
+  source ~/.bashrc
+}
+source ~/.klsh/.klshfunction2

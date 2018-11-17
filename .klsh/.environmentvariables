@@ -1,0 +1,102 @@
+#!/bin/bash
+# declare PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# declare PS2='\[\033[01;34m\]> \[\033[00m\]'
+# declare PS3=''
+# declare PS4='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\+ '
+# declare KLSH="$USER/.klsh"
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PS2='\[\033[01;34m\]> \[\033[00m\]'
+export PS3=''
+export PS4='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\+ '
+export KLSH="$HOME/.klsh"
+# #Bold colors for Printf
+# export bluebold="\033[01;34m"
+# export greenbold="\033[01;32m"
+# export yellowbold="\033[01;33m"
+# export pinkbold="\033[01;35m"
+# export redbold="\033[01;31m"
+# #Normal colors for Printf
+# export blue="\033[34m"
+# export green="\033[32m"
+# export yellow="\033[33m"
+# export pink="\033[35m"
+# export red="\033[31m"
+# export white="\033[00m"
+# #Italic colors for Printf
+# export blueitalic="\033[03;34m"
+# export greenitalic="\033[03;32m"
+# export yellowitalic="\033[03;33m"
+# export pinkitalic="\033[03;35m"
+# export reditalic="\033[03;31m"
+# #Underlined colors for Printf
+# export blueunderlined="\033[04;34m"
+# export greenunderlined="\033[04;32m"
+# export yellowunderlined="\033[04;33m"
+# export pinkunderlined="\033[04;35m"
+# export redunderlined="\033[04;31m"
+# #Flashing colors for Printf
+# export blueflash="\033[05;34m"
+# export greenflash="\033[05;32m"
+# export yellowflash="\033[05;33m"
+# export pinkflash="\033[05;35m"
+# export redflash="\033[05;31m"
+
+#For: echo -e and printf
+#Formating Codes
+export bold="\e[1m"
+export dim="\e[2m"
+export underlined="\e[4m"
+export blink="\e[5m"
+export inverted="\e[7m"
+export hidden="\e[8m"
+#Reset Vars
+export resetall="\e[0m" #All
+export resetbold="\e[21m" #Bold
+export resetdim="\e[22m" #Dim
+export resetunderlined="\e[24m" #Underlined
+export resetblink="\e[25m" #Blink
+export resetinverted="\e[27m" #Inverted
+export resethidden="\e[28m" #Hidden
+#Colors [forceground]
+export defaultcolor="\e[39m"
+export black="\e[30m"
+export red="\e[31m"
+export green="\e[32m"
+export yellow="\e[33m"
+export blue="\e[34m"
+export magenta="\e[35m"
+export cyan="\e[36m"
+export lightgray="\e[37m"
+export darkgray="\e[90m"
+export lightred="\e[91m"
+export lightgreen="\e[92m"
+export lightyellow="\e[93m"
+export lightblue="\e[94m"
+export lightmagenta="\e[95m"
+export lightcyan="\e[96m"
+export white="\e[97m"
+#BackgroundColor
+export defaultbg="\e[49m"
+export blackbg="\e[30m"
+export redbg="\e[31m"
+export greenbg="\e[42m"
+export yellowbg="\e[43m"
+export bluebg="\e[44m"
+export magentabg="\e[45m"
+export cyanbg="\e[46m"
+export lightgraybg="\e[47m"
+export darkgraybg="\e[100m"
+export lightredbg="\e[101m"
+export lightgreenbg="\e[102m"
+export lightyellowbg="\e[103m"
+export lightbluebg="\e[104m"
+export lightmagentabg="\e[105m"
+export lightcyanbg="\e[106m"
+export whitebg="\e[107m"
+#Source: https://misc.flogisoft.com/bash/tip_colors_and_formatting
+function colortest {
+  while true; do clear; echo -e ${resetall}${lightbluebg}${blink}${dim}${bold}${inverted}${underlined}${red}hello$resetall; sleep 0.2; done
+}
+printf "$blue"
+source ~/.klsh/.klshother
+return 0

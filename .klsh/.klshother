@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#THIS FILE IS FOR DEVELOPERS WICH WANT TO ADD THEIR OWN CONTENT!!! NOT FOR STANDARD USERS
-
-
-
 # Make your program's installer append the commands you want to add here
 # Example:
 # function example {
