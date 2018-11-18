@@ -146,7 +146,9 @@ function runoutofmem {
   printf "${red}"
   runoutofmem
 }
-
+function crashaprogram {
+  echo -e "\n\n${red}${bold}Warning: Program $@ has crashed${resetall}\n\n" && sleep 44444444
+}
 function crashthebashfake {
   echo "Crashing the bash..."
   sleep 1.4
@@ -160,6 +162,9 @@ function crashthebashfast {
   runoutofmem &
   runoutofmem
 }
+function klicensing {
+  echo "copyright (c) 2017-2018 codingbunnys. All rights reserved."
+}
 function crashthebash {
   clear
   echo -e "${yellow}Trying to ${red}crash${yellow} the bash"
@@ -172,12 +177,12 @@ function messthingsup {
   PS1="${red}echo "
 }
 function setdefault {
-  echo "Removing this file will force you to run \"klsh\" to open klsh" > "${HOME}/.klsh/default"
-  echo -e "${bold}${green}klsh ${defaultcolor}is now your default terminal. Because we cant choose not to, this will cause normal bash without klsh features to be UNAVAILABLE[while klsh is the default].\n\nsince klsh doesnt override almost anything from bash and anything from bash is also acievable in the same way in klsh, it shouldnt be a problem\n\n\nif you want to undo this, type \"unsetdefault\" in a terminal[not SH]\n\nYou can still get into SH but starting BASH will open KLSH. if your current default terminal is SH, then it will stay so, but just typing \"bash\" will open klsh"
+  echo "true" > "${HOME}/.klsh/default"
+  echo -e "${bold}${green}klsh ${defaultcolor}is now your default terminal. Because we cant choose not to, this will cause normal bash without klsh features to be UNAVAILABLE[while klsh is the default].\n\nsince klsh doesnt override almost anything from bash and anything from bash is also acievable in the same way in klsh, it shouldnt be a problem\n\n\nif you want to undo this, type \"unsetdefault\" in a terminal[not SH]\n\nYou can still get into SH but starting BASH will open KLSH. if your current default terminal is SH, then it will stay so, but just typing \"bash\" [in SH] will open klsh\n\nexecuting \"BASH\" in klsh will probababally still keep you in klsh"
 }
 function unsetdefault {
   output=`cd ${HOME}/.klsh`
-  output=`rm default`
+  echo "false" > "${HOME}/.klsh/default"
   echo -e "${red}KLSH is no longer the default terminal... If you didnt set it as the default, find out more by typing \"setdefault\""
 }
 function f {
