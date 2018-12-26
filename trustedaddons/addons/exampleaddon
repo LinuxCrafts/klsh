@@ -1,0 +1,7 @@
+#!/bin/bash
+function exampleaddon {
+  echo -e "${red}Commands:\nexampleaddon  ${blue}-  ${green}Prints this message\n${red}examplecommand  ${blue}-  ${green}an example addon-command"
+}
+function examplecommand {
+  echo -e "i dunno.\nLLLLL"
+}
