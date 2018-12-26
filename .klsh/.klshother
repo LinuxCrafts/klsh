@@ -11,3 +11,5 @@
 # echo "this command will run when klsh starts"
 #
 # Make sure your program's installer ONLY writes SHELL code/BASH code/KLSH code
+#
+# Will be replaced with an addons folder in the future
