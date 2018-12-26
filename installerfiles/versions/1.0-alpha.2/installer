@@ -1,0 +1,31 @@
+#!/bin/bash
+function proceed {
+  cd ~
+  mkdir .klsh
+  cd .klsh
+  wget --quiet https://raw.githubusercontent.com/codingbunnys/klsh/master/installerfiles/versions/1.0-alpha.2/klsh.zip
+  unzip klsh.zip
+  rm default
+  cd ..
+  echo "
+  function klsh {
+      source ~/.klsh/.klshcore
+  }
+  if [[ `cat \$HOME/.klsh/default` == \"true\" ]]; then
+    klsh
+  fi" >> .bashrc
+  cd .klsh
+  chmod 777 ./*
+  chmod 777 ./addons/*
+  zenity --notification --text="Done INSTALLING" --hint="open a **NEW** terminal and run \"klsh\""
+}
+if [[ "${USER}" != "root" ]]; then
+  echo "If there isnt a request to enter a password below, Run this program as ROOT"
+  sudo apt install zip
+  sudo apt install zenity
+  proceed
+else
+  apt install zip
+  sudo apt install zenity
+  proceed
+fi
