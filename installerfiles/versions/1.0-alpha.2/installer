@@ -1,12 +1,10 @@
 #!/bin/bash
 function proceed {
   cd ~
-  mkdir .klsh
-  cd .klsh
   wget --quiet https://raw.githubusercontent.com/codingbunnys/klsh/master/installerfiles/versions/1.0-alpha.2/klsh.zip
   unzip klsh.zip
+  cd .klsh
   rm default
-  cd ..
   echo "
   function klsh {
       source ~/.klsh/.klshcore
