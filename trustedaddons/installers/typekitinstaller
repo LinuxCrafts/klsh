@@ -1,0 +1,6 @@
+#!/bin/bash
+pwdd=$PWD
+cd ~/.klsh/addons
+wget https://raw.githubusercontent.com/codingbunnys/klsh/master/trustedaddons/addons/typekit
+echo "typekit" >> "Addons.list"
+cd $pwdd
