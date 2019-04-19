@@ -1,0 +1,73 @@
+#!/bin/bash
+function proceed {
+  cd ~
+  wget --quiet https://raw.githubusercontent.com/codingbunnys/klsh/master/installerfiles/versions/1.0-beta.1/klsh.zip
+  unzip klsh.zip
+  cd .klsh
+  rm default
+  cd ~
+  addbashrc=`echo "
+function klsh {
+    source ~/.klsh/.klshcore
+}
+printf \"\e[90m\"
+if [[ \\\`cat \$HOME/.klsh/default\\\` == \"true\" ]]; then
+  klsh
+fi
+printf \"\e[0m\""`
+  bshrccat=`cat ~/.bashrc`
+  empty=""
+  setbashrc=${bshrccat//"$addbashrc"/$empty}
+  setbashrc=${setbashrc}${addbashrc}
+  echo "$setbashrc" > .bashrc
+  cd .klsh
+  chmod 777 ./*
+  chmod 777 ./addons/*
+  zenity --notification --text="Done INSTALLING" --hint="open a **NEW** terminal and run \"klsh\""
+}
+hassudo=0
+function zipins {
+  x=`zip`
+  if [[ "$?" == "127" ]]; then
+    echo "Zip is not installed; INSTALLING"
+    echo "if you do not see a password thing below and the text below doesnt say \"user:root\"; then run this program with root permissions"
+    echo "user:${USER}"
+    ${rootusr}apt install zip
+    if [[ $? == 0 ]]; then
+      hassudo=1
+    fi
+    somins zenity zenity
+  else
+    echo "Zip is already installed!"
+    somins zenity zenity
+  fi
+}
+function somins {
+  if [[ "$2" == "" ]]; then
+    x=`$1`
+    q="$?"
+  else
+    x=`$2`
+    q="$?"
+  fi
+  if [[ "$q" == "127" ]]; then
+    echo "$1 is not installed; INSTALLING"
+    if [[ "$hassudo" == 0 ]]; then
+      echo "if you do not see a password thing below and the text below doesnt say \"user:root\"; then run this program with root permissions"
+      echo "user:${USER}"
+    fiif [[ `cat $HOME/.klsh/default` == "true" ]]; then
+      klsh
+    fi
+    ${rootusr}apt install $1
+    proceed
+  else
+    echo "$1 is already installed!"
+    proceed
+  fi
+}
+if [[ "${USER}" != "root" ]]; then
+  rootusr="sudo "
+  zipins
+else
+  rootusr=""
+fi
