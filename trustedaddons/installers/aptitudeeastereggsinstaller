@@ -1,0 +1,15 @@
+#!/bin/bash
+#Download Dependencies
+wget https://raw.githubusercontent.com/codingbunnys/klsh/master/trustedaddons/installers/typekitinstaller
+#Make Dependencies' Installers Executable
+chmod 755 ./typekitinstaller
+#Install Dependencies
+./typekitinstaller
+#Delete Dependencies' Installer files
+rm ./typekitinstaller
+#Download&Install
+pwdd=$PWD
+cd ~/.klsh/addons
+wget https://raw.githubusercontent.com/codingbunnys/klsh/master/trustedaddons/addons/aptitudeeastereggs
+echo "aptitiudeeastereggs" >> "Addons.list"
+cd $pwdd
