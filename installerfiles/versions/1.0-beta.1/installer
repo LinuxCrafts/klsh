@@ -55,7 +55,8 @@ function somins {
     if [[ "$hassudo" == 0 ]]; then
       echo "if you do not see a password thing below and the text below doesnt say \"user:root\"; then run this program with root permissions"
       echo "user:${USER}"
-    fiif [[ `cat $HOME/.klsh/default` == "true" ]]; then
+    fi
+    if [[ `cat $HOME/.klsh/default` == "true" ]]; then
       klsh
     fi
     ${rootusr}apt install $1
