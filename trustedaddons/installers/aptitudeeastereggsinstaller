@@ -11,5 +11,5 @@ rm ./typekitinstaller
 pwdd=$PWD
 cd ~/.klsh/addons
 wget https://raw.githubusercontent.com/codingbunnys/klsh/master/trustedaddons/addons/aptitudeeastereggs
-echo "aptitiudeeastereggs" >> "Addons.list"
+echo "aptitudeeastereggs" >> "Addons.list"
 cd $pwdd
