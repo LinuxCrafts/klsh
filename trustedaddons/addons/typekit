@@ -1,0 +1,154 @@
+#!/bin/bash
+#aliases
+alias typecommand="commandtype"
+alias pcmd="cmdp"
+alias tcmd="cmdt"
+alias tkcommandtype="tcmd"
+alias tkcommandprefix="pcmd"
+alias tktypecommand="tkcommandtype"
+alias tkprefixcommand="tkcommandprefix"
+alias typekitcommandtype="tktypecommand"
+alias typekitcommandprefix="tkprefixcommand"
+alias libtk="libtypekit"
+alias raiwc="replaceallinputwithchar"
+export typekit="true"
+#Code
+function forcetype {
+  read -n 1 key
+  while true; do
+    echo -e -n "\b$1";
+  done
+}
+function cmdp {
+  if [[ "$1" == "" ]]; then
+    printf "${bold}${green}${USER}@${HOSTNAME}:${blue}~${resetall}$ "
+  elif [[ "$1" != "" ]]; then
+    dir=${1//$HOME/\~}
+    printf "${bold}${green}${USER}@${HOSTNAME}:${blue}${dir}${resetall}$ "
+  fi
+}
+
+function keypress {
+  in="$@"
+  in=${in// /​}
+  in=${in//"\n"/"¯"}
+  in=${in//"enter"/"¯"}
+  in=${in//"return"/"¯"}
+  invar="`echo \"$in\" | sed -e 's/\(.\)/\1\n/g'`"
+
+  filename="$HOME/.klsh/TypeKitDat.tmp"
+  echo "$invar" > "$filename"
+  exec 4<$filename
+  while read -u4 p ; do
+      p=${p//​/space}
+      p=${p//"¯"/"Return"}
+      p=${p//"."/"period"}
+      xdotool key $p
+      sleep 0.05
+  done
+  rm $filename
+  filename=""
+}
+function cmdt {
+  if [[ "$speed" == "reset" ]]; then
+    speed=""
+  fi
+  if [[ "$speed" == "" ]]; then
+    speed=0.0775
+  fi
+  in="$@"
+in=${in//"
+"/"¯"}
+in=${in//'
+'/"¯"}
+
+  in=${in//"\\n"/"¯"}
+  in=${in//"`echo -e \"\n\"`"/"¯"}
+  in=${in//" "/"​"}
+  invar="`echo \"$in\" | sed -e 's/\(.\)/\1\n/g'`"
+
+  filename="$HOME/.klsh/TypeKitDat.tmp"
+  echo "$invar" > "$filename"
+  exec 4<$filename
+  while read -u4 p ; do
+    if [[ "$p" == "¯" ]]; then
+      printf "\n"
+    else
+      if [[ "$color" == "green" ]]; then
+        printf ${green}
+      fi
+      p=${p//"​"/" "}
+      p=${p//'%'/'\%'}
+      printf "$prefix"
+      printf "$p"
+    fi
+    sleep $speed
+  done
+  rm $filename
+  filename=""
+  if [[ "$nnl" == "false" ]]; then
+    nnlioisajdhfkaheifutadsoiufyde="$nnl"
+    nnl=""
+  fi
+  if [[ "$nnl" == "" ]]; then
+    printf "\n"
+    nnl="$nnlioisajdhfkaheifutadsoiufyde"
+    nnlioisajdhfkaheifutadsoiufyde=""
+  fi
+}
+function libtypekit {
+  replacewith="\n$spaces"
+  replaceper=104
+  tcmd `echo -e "$@" | sed "s/.\{${replaceper}\}/&${replacewith}/g"`
+}
+function replaceallinputwithchar {
+  while true; do
+    echo -e -n "\b$1";
+    sleep 0.05;
+  done
+}
+function eee {
+  echo ""
+}
+function typekit {
+  nnl=false
+  speed=0.011
+  cmdt "Commands:"
+  if [[ $1 == "" ]]; then
+    speed=0.033
+  else
+    speed=$1
+  fi
+  if [[ $2 == "" ]]; then
+    nlint=0.2 #nlint=newlineinterval
+  else
+    nlint=$2 #nlint=newlineinterval
+  fi
+  if [[ $3 == "" ]]; then
+    ipc=0.5 #ipc=IntervalPerCommand
+  else
+    ipc=$3 #ipc=IntervalPerCommand
+  fi
+  spaces="                                          "
+  sleep $ipc
+  printf ${green}
+  cmdt "cmdt text                                 Writes the characters in [text]; interval between characters is"
+  printf "${spaces}${green}"
+  sleep $nlint
+  cmdt "stored in \$speed [default: 0.0775, to reset to default, set the"
+  printf "${green}${spaces}"
+  sleep $nlint
+  cmdt "\"\$speed\" variable to \"reset\" or \"\""
+  sleep $ipc
+  printf "${blue}"
+  cmdt "cmdp [current directory]                  Prints the default prefix for klsh users. If \"[current directo-"
+  printf "${blue}$spaces"
+  sleep $nlint
+  cmdt "ry]\" is specified; it will pretend the user is in that specific"
+  printf "${blue}$spaces"
+  sleep $nlint
+  cmdt "directory.\"[current directory]\" can be a non existant directory"
+}
+function typekit:help {
+  typekit $@
+}

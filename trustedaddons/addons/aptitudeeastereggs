@@ -1,0 +1,145 @@
+#!/bin/bash
+alias aptitudeee="aptitudeeastereggs"
+alias aptitudeeeggs="aptitudeeastereggs"
+function aptidude {
+  tcmd 'All right, you win.¯
+¯
+                             /------|¯
+                     -------/       |¯
+                    /               |¯
+                   /                |¯
+ -----------------/                  --------|¯
+ ---------------------------------------------¯ഃ¯ഃ¯ഃ¯ഃ'
+ #   tcmd 'All right, you win.¯
+ # ¯
+ #                              /----\¯
+ #                      -------/      \¯
+ #                     /               \¯
+ #                    /                |¯
+ #  -----------------/                  --------\¯
+  # ----------------------------------------------¯'
+}
+function aee {
+  speed=0.012
+  if [[ "$1" == "" ]]; then
+    tcmd "AptitudeEasterEggs does not have any easter eggs"
+  elif [[ "$1" == "-e" ]]; then
+    tcmd it really doesn\'t
+  elif [[ "$1" == "-ee" ]]; then
+    tcmd Stop it!
+  elif [[ "$1" == "-eee" ]]; then
+    tcmd "STߡP ߛT! NOW!"
+  elif [[ "$1" == "-eeee" ]]; then
+    printf ${hidden}
+    tcmd ߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷¯߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷¯߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷¯
+    printf ${resetall}
+  elif [[ "$1" == "-eeeee" ]]; then
+    tcmd Will you leave if i give you an easter egg?
+  elif [[ "$1" == "-eeeeee" ]]; then
+    tcmd DO NOT type aee -eeeeeee
+  elif [[ "$1" == "-eeeeeee" ]]; then
+    tcmd FINE! HERE IS AN EASTER EGG!
+    tcmd ߷*߷=߷߷߷߷߷
+  elif [[ "$1" == "-eeeeeeee" ]]; then
+    tcmd will you ever stop?
+    tcmd will you ev߸r stop?
+    tcmd will you ever stop?
+  elif [[ "$1" == "-eeeeeeeee" ]]; then
+    tcmd WARNING: ERRORS AHEAD
+  elif [[ "$1" == "-eeeeeeeeee" ]]; then
+    xmessage -nearmouse -buttons Ok. KLSH has encountered a critical error and needs to quit. [error code: 1]
+    exit 0
+  fi
+}
+function aptitudeeastereggs {
+  speed="0.044"
+  tcmd === E a s t e r - e g g s ===
+  sleep 3
+  clear
+  tcmd === E a s t e r - e g g \# 1 ===
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude moo
+  sleep 0.3
+  speed="0.011"
+  tcmd `aptitude moo`
+  speed="0.009"
+  tcmd +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+  speed="0.044"
+  tcmd === E a s t e r - e g g \# 2 ===
+  sleep 3
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude -v moo
+  sleep 0.3
+  speed="0.011"
+  tcmd `aptitude -v moo`
+  speed="0.009"
+  tcmd +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+  speed="0.044"
+  tcmd === E a s t e r - e g g \# 3 ===
+  sleep 3
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude -vv moo
+  sleep 0.3
+  speed="0.011"
+  tcmd `aptitude -vv moo`
+  speed="0.009"
+  tcmd +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+  speed="0.044"
+  tcmd === E a s t e r - e g g \# 4 ===
+  sleep 3
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude -vvv moo
+  sleep 0.3
+  speed="0.011"
+  tcmd `aptitude -vvv moo`
+  speed="0.009"
+  tcmd +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+  speed="0.044"
+  tcmd === E a s t e r - e g g \# 5 ===
+  sleep 3
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude -vvvv moo
+  sleep 0.3
+  speed="0.011"
+  tcmd `aptitude -vvvv moo`
+  speed="0.009"
+  tcmd +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+  speed="0.044"
+  tcmd === E a s t e r - e g g \# 6 ===
+  sleep 3
+  speed="0.011"
+  nnl="true"
+  tcmd "`pcmd $PWD`"
+  nnl="false"
+  speed="0.044"
+  sleep 0.3
+  tcmd aptitude -vvvvv moo
+  sleep 0.3
+  speed="0.005"
+  `aptitude -vvvvv moo`
+}
