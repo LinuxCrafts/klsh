@@ -5,6 +5,7 @@ function proceed {
   unzip klsh.zip
   cd .klsh
   rm default
+  touch addons/Addons.list
   cd ~
   addbashrc=`echo "
 function klsh {
