@@ -21,10 +21,10 @@ function forcetype {
 }
 function cmdp {
   if [[ "$1" == "" ]]; then
-    printf "${bold}${green}${USER}@${HOSTNAME}:${blue}~${resetall}$ "
+    printf "${bold}${green}${USER}@${HOSTNAME}${resetall}:${blue}~${resetall}$ "
   elif [[ "$1" != "" ]]; then
     dir=${1//$HOME/\~}
-    printf "${bold}${green}${USER}@${HOSTNAME}:${blue}${dir}${resetall}$ "
+    printf "${bold}${green}${USER}@${HOSTNAME}${resetall}:${blue}${dir}${resetall}$ "
   fi
 }
 
