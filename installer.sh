@@ -1,4 +1,5 @@
 #!/bin/bash
+echo this installer will no longer work; unless you got a time machine :D
 cd $HOME
 function program {
   function install {
