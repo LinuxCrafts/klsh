@@ -1,7 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-labels: 
+title: "[BUG] "
+labels: bug
+assignees: codingbunnys
 
 ---
 
@@ -18,11 +20,11 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**LOGS**
+If applicable, add Logs of the console to help explain your problem.
 
 **Product version (please complete the following information):**
- - Version [e.g. 22]
+ - Version [e.g. 1.0-beta.2]
 
 **Additional context**
 Add any other context about the problem here.
